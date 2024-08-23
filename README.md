@@ -77,9 +77,32 @@ myapp_1  | MY_VARIABLE_FROM_DOCKERFILE: Hello from Dockerfile!
 myapp_1  | MY_VARIABLE_FROM_DC: Hello from docker-compose.yml
 myapp_1  | MY_BUILD_ARG (MY_VARIABLE): 
 myapp_1  | MY_BUILD_ARG_FROM_DC (MY_BUILD_ARG_FROM_DC): Hello build build ARG from docker-compose.yml
+
+```
+## 4. Using `.env` Files
+
+You can store environment variables in a [.env](.env) file and make them available to Docker.
+
+```bash
+    env_file:
+      - .env
 ```
 
-## 4. Building Docker Images with Build Arguments
+### Expected Output:
+
+```bash
+Creating docker-env-vars-example_myapp_1 ... done
+Attaching to docker-env-vars-example_myapp_1
+myapp_1  | MY_VARIABLE_FROM_OS: None
+myapp_1  | MY_VARIABLE_FROM_ENV: Hello from .env file
+myapp_1  | MY_VARIABLE_FROM_DOCKERFILE: Hello from Dockerfile!
+myapp_1  | MY_VARIABLE_FROM_DC: Hello from docker-compose.yml
+myapp_1  | MY_BUILD_ARG (MY_VARIABLE): 
+myapp_1  | MY_BUILD_ARG_FROM_DC (MY_BUILD_ARG_FROM_DC): Hello build build ARG from docker-compose.yml
+
+```
+
+## 5. Building Docker Images with Build Arguments
 
 You can pass build-time arguments using the `ARG` instruction in the [Dockerfile](Dockerfile).
 
@@ -106,7 +129,3 @@ MY_BUILD_ARG_FROM_DC (MY_BUILD_ARG_FROM_DC):
 ```
 
 Build arguments (ARG) are only available during the build process. However, you can pass them to runtime environment variables using ENV if needed.
-
-## 5. Using `.env` Files
-
-You can store environment variables in a [.env](.env) file and make them available to Docker.
