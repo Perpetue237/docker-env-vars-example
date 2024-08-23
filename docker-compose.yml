@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  myapp:
+    build:
+      context: .
+      args:
+        MY_BUILD_ARG_FROM_DC: "Hello build ARG from docker-compose.yml"
+    environment:
+      - MY_VARIABLE_FROM_DC=Hello from docker-compose.yml
+    env_file:
+      - .env
