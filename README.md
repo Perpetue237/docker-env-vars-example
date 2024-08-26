@@ -137,6 +137,8 @@ MY_BUILD_ARG_FROM_DC (MY_BUILD_ARG_FROM_DC):
 
 Build arguments (ARG) are only available during the build process. However, you can pass them to runtime environment variables using ENV if needed.
 
+## License
+
 Distributed under the Apache License. See [LICENSE](LICENSE) for more information.
 
 ## Contact
