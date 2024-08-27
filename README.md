@@ -1,4 +1,4 @@
-# Docker Environment Variables Example
+# Docker Environment Variables Examples
 
 This repository demonstrates how to work with environment variables in Docker. It covers the following topics:
 
